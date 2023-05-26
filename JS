@@ -1,0 +1,46 @@
+// Array de objetos representando os itens do cardápio
+const menuItems = [
+    {
+      nome: "Item 1",
+      descricao: "Descrição do item 1",
+      preco: 10.00
+    },
+    {
+      nome: "Item 2",
+      descricao: "Descrição do item 2",
+      preco: 15.00
+    },
+    {
+      nome: "Item 3",
+      descricao: "Descrição do item 3",
+      preco: 12.00
+    }
+  ];
+  
+  // Função para exibir o cardápio
+  function exibirCardapio() {
+    const menu = document.getElementById("menu");
+  
+    menuItems.forEach(item => {
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("item");
+  
+      const nomeElement = document.createElement("h2");
+      nomeElement.textContent = item.nome;
+  
+      const descricaoElement = document.createElement("p");
+      descricaoElement.textContent = item.descricao;
+  
+      const precoElement = document.createElement("p");
+      precoElement.textContent = `R$ ${item.preco.toFixed(2)}`;
+  
+      itemDiv.appendChild(nomeElement);
+      itemDiv.appendChild(descricaoElement);
+      itemDiv.appendChild(precoElement);
+  
+      menu.appendChild(itemDiv);
+    });
+  }
+  
+  // Chamada da função para exibir o cardápio
+  exibirCardapio();
